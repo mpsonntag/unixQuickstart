@@ -217,8 +217,8 @@ ssh computername        ... connect to another computer using secure shell (an e
                 [chris@troll ~]$
 
 scp computername:remote_directory/filename current_directory   ... copy file "filename" from a remote computer or network into the "current_directory" using encrypted file copy
-        	e.g. [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
-        	
+            e.g. [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
+
 wc filename      ... counts lines, words and letters within file "filename"
                 e.g. [chris@troll work]wc shopping_list.txt
 
