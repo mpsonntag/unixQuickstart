@@ -2,97 +2,91 @@
 
 ## Using the shell
 
-baby steps
+Baby steps
 1) get someone to show you how to open a shell and execute commands
 2) get to know the file system and how to navigate through it (see explanatory tutorial above)
 3) get to know the basic shell commands described below
 4) script away
 
-
-More resources
-
-Understanding the unix file system:
+### Understanding the unix file system:
 http://www.december.com/unix/tutor/filesystem.html
-
-and
-http://linuxcommand.org/lts0040.php
-
-Shell Tutorial
-http://linuxcommand.org/learning_the_shell.php
 
 
 ## Navigating through the filesystem:
 
 when you first open your shell you will see something like this:
 
-        [chris@troll ~]$
+    [chris@troll ~]$
 
 this means, that you have logged into a linux network with username "chris", that you currently use the computer named "troll" and are currently within the space, the filesystem has reserved as your workspace (indicated by "~").
 
 in a more abstract way will always see the information like this:
 
-[username@computername current_folder]$
+    [username@computername current_folder]$
 
-You can navigate through the filesystem by using the "cd" (change directory) command right after the "$" sign. Work yourself through the navigation introduction provided with the links above.
+You can navigate through the filesystem by using the `cd` (change directory) command right after the `$` sign. Work yourself through the navigation introduction provided with the links above.
 
-Nice to know:
-
+### Unix good to knows
 - Special characters which are not allowed in file- or foldernames:
 `/, .., ~, *, ?, >, <, |, \`
 
-- Linux is case sensitive!      "Filename.txt" is not the same as "filename.txt"
+- Linux is case sensitive! "Filename.txt" is not the same as "filename.txt"
 
-- Try to avoid blanks within file- or foldernames, always use underscore or minus, escpecially, if you create folders or files using the filebrowser!
+- Try to avoid blanks within file- or foldernames, always use underscore or minus, especially, if you create folders or files using the filebrowser!
 
-        e.g. 
-        do not use:
-        project computational systems biology
-        
-        use:
-        project_computational_systems_biology
+      e.g. 
+      do not use:
+      project computational systems biology
+
+      use:
+      project_computational_systems_biology
 
 - Use the auto-complete function provided by the tabulator key:
 
-        example:
-        [username@computername ~]$cd /h
+      cd /h
 
-        hit "tab" once, it should auto-complete your entry to
-        [username@computername ~]$cd /home/
-        
-        if you hit "tab" twice, it will display the contents of the directory, without disrupting your command entry
-        [username@listeria ~]$ cd /home/
-        admin/ apps/  conf/  edu/   proj/  user/
-        [username@listeria ~]$ cd /home/
+      # hit "tab" once, it should auto-complete your entry to
+      cd /home/
+      
+      # if you hit "tab" twice, it will display the contents of the directory, without disrupting your command entry
+      cd /home/
 
-        if there are more than one files or directories with the same starting letters (e.g. /home/ or /hello/) you will have to enter the next letter, before autocomplete will work
-        
-        [username@listeria ~]$ cd /h    
-        "tab" will  not work
-        
-        but:
-        [username@listeria ~]$ cd /he
+      admin/ apps/  conf/  edu/   proj/  user/
 
-        "tab" returns:
-        [username@listeria ~]$ cd /hello/
+      cd /home/
 
-- get help! : either by using "man" (manual) command:
+      # if there are more than one files or directories with the same starting letters (e.g. /home/ or /hello/) you will have to enter the next letter, before autocomplete will work
+      
+      cd /h
+      # "tab" will  not work
 
-        [username@computername directory]$man [command]
-        e.g. [chris@troll ~]$man cp
-        
-        or by using "--help" commandline option:
-        [username@computername directory]$[command] --help
-        e.g. [chris@troll ~]$cp --help
+      # but:
+      cd /he
+
+      # "tab" returns:
+      cd /hello/
+
+- get help! either by using the `man` (manual) command or by using `--help` commandline option:
+
+      man [command]
+      # example
+      man cp
+
+      [command] --help
+      # example
+      cp --help
 
 - most of the command line programs displaying the contents of text files can be ended by simply pressing "q".
 
 - how to stop a running program (process will be on hold in the background):
-        ctrl + z
+
+      ctrl + z
 
 - how to kill a running program (process will be terminated):
-        ctrl + d
-        
-- No paper basket! If you remove files or directories using the shell, there is no easy recovery!
+
+      ctrl + d
+
+- There is no paper basket on the command line! If you remove files or directories using the shell, there is no easy file recovery!
 
 
 ## Basic Bash commands
@@ -100,39 +94,39 @@ Nice to know:
 - `ls` ... display files and directories within your current directory
 - `ls -l` ... like ls, but display additional information
 - `ls -a` ... like ls, but also display hidden files and directories
-- `ls -l -a` ... combination of ls -l and ls -a
+- `ls -l -a` ... combination of `ls -l` and `ls -a`
 
 `- ls ../[foldername]` ... display the contents of directory "foldername" residing on the same hierarchical layer as the folder we are currently residing in
 
-- `ll` ... like ls -l
+- `ll` ... like `ls -l`
 
 - `pwd` ... print working directory, prints the complete path from root until the directory we are currently residing in
 
-        e.g. [chris@troll papers]$pwd
-             /home/users/chris/papers/
-             [chris@troll papers]$
+      [chris@troll papers]$pwd
+      /home/users/chris/papers/
+      [chris@troll papers]$
 
 - `cd [path]` ... change directory; move within the filesystem from your current directory to another directory specified in your [path]
 
-        e.g.            [chris@troll ~]$cd /home/user/franz/
+      [chris@troll ~]$cd /home/user/franz/
 
 - `cd ..`   ... change from the current directory to the directory directly above.
 
 - `mkdir [foldername]` ... create folder "foldername" at your current position within the filesystem
 
-        e.g. [chris@troll papers]$mkdir cell_papers
+      [chris@troll papers]$mkdir cell_papers
 
 - `rmdir [foldername]` ... remove folder "foldername" from the filesystem. will only work, if the folder is empty.
 
-        e.g. [chris@troll papers]$rmdir cell_papers
+      [chris@troll papers]$rmdir cell_papers
 
 - `rm [filename]` ... remove file "filename" from the filesystem.
 
-        e.g. [chris@troll papers]$rm 2011_Science_2282772.pdf
+      [chris@troll papers]$rm 2011_Science_2282772.pdf
 
 - `rm [foldername] -r` ... remove folder "foldername" from the filesystem including all files and folders it contains.
 
-        e.g. [chris@troll work]$rm papers -r
+      [chris@troll work]$rm papers -r
 
 - `cp [path1/source] [path2/target]` ... copy file "source" residing at location "path1" to file "target" residing at location "path2"
 
@@ -177,7 +171,7 @@ Nice to know:
 
 ## Further Basic Bash command line options:
 
-- `[command] > [filename]` ... will write the output of a specifc [command] to a specific file. note, that an already existing file with the same filename at the same location will be replaced!
+- `[command] > [filename]` ... will write the output of a specific [command] to a specific file. note, that an already existing file with the same filename at the same location will be replaced!
 
         e.g.    [chris@troll work]$echo hurray for icecream! > important.txt
                 [chris@troll work]$less important.txt
@@ -245,9 +239,9 @@ More nice bash commands, use the --help option for in depth information:
 - `tar`     ... compress/uncompress files
 
 
-## Commandline programms for textfile handling
+## Command line programs for text file handling
 
-Use the --help option for in depth information, links provided or the interweb.
+Use the --help option for in depth information, links provided or the interwebs.
 
 - `sort`    ... Sorts standard input then outputs the sorted result on standard output.
 - `uniq`    ... Given a sorted stream of data from standard input, it removes duplicate lines of data (i.e., it makes sure that every line is unique).
@@ -257,9 +251,6 @@ Use the --help option for in depth information, links provided or the interweb.
 - `tail`    ... Outputs the last few lines of its input. Useful for things like getting the most recent entries from a log file.
 - `tr`      ... Translates characters. Can be used to perform tasks such as upper/lowercase conversions or changing line termination characters from one type to another (for example, converting DOS text files into Unix style text files).
 - `grep`    ... Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters.
-                http://www.panix.com/~elflord/unix/grep.html
-
-- `sed`     ... Stream editor. Can perform more sophisticated text translations than tr.
-                http://www.ceri.memphis.edu/computer/docs/unix/sed.htm
+                https://www.panix.com/~elflord/unix/grep.html
+- `sed`     ... Stream editor. Can perform more sophisticated text translations than `tr`.
 - `awk`     ... An entire programming language designed for constructing filters. Extremely powerful.
-                http://www.vectorsite.net/tsawk.html
