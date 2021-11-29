@@ -76,6 +76,7 @@ Nice to know:
         [username@listeria ~]$ cd /hello/
 
 - get help! : either by using "man" (manual) command:
+
         [username@computername directory]$man [command]
         e.g. [chris@troll ~]$man cp
         
@@ -106,59 +107,73 @@ ls ../Foldername ... display the contents of directory "Foldername" residing on 
 ll ... like ls -l
 
 pwd ... print working directory, prints the complete path from root until the directory we are currently residing in
+
         e.g. [chris@troll papers]$pwd
              /home/users/chris/papers/
              [chris@troll papers]$
 
 cd [path] ... change directory; move within the filesystem from your current directory to another directory specified in your [path]
+
 e.g.            [chris@troll ~]$cd /home/user/franz/
 
 cd ..   ... change from the current directory to the directory directly above.
 
 mkdir foldername ... create folder "foldername" at your current position within the filesystem
+
         e.g. [chris@troll papers]$mkdir cell_papers
 
 rmdir foldername ... remove folder "foldername" from the filesystem. will only work, if the folder is empty.
+
         e.g. [chris@troll papers]$rmdir cell_papers
 
 rm filename ... remove file "filename" from the filesystem.
+
         e.g. [chris@troll papers]$rm 2011_Science_2282772.pdf
 
 rm foldername -r ... remove folder "foldername" from the filesystem including all files and folders it contains.
+
         e.g. [chris@troll work]$rm papers -r
 
 cp path1/source path2/target ... copy file "source" residing at location "path1" to file "target" residing at location "path2"
+
         e.g. [chris@troll work]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf /home/users/chris/work/papers/science/2011_Science_2282772.pdf
 
 cp path1/source ./target ... copy file "source" residing at location "path1" to file "target" at the current location
+
         e.g. [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf ./2011_Science_2282772.pdf
                 will copy the file 2011_Science_2282772.pdf from location /home/user/chris/work/papers/ to location /home/users/chris/work/papers/science/
 
 cp path1/source . ... copy file "source" residing at location "path1" to the current location, keeping the same filename.
+
         e.g. [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf .
                 will copy the file 2011_Science_2282772.pdf from location /home/user/chris/work/papers/ to location /home/users/chris/work/papers/science/
 
 mv [Pfad-Quelle]/[Filename] [Pfad-Ziel] ... same as "cp" command, but moves the file from one location to the other, deleting the original file.
 
-
 echo text ... prints "text" onto the screen
+
         e.g. [chris@troll work]$echo hurray for icecream!
         
 echo text > filename.txt ... saves "text" into file "filename.txt" which will be created at the current filesystem location
+
         e.g. [chris@troll work]$echo hurray for icecream! > important.txt
 
 cat filename ... prints the contents of file "filename" onto the screen.
+
         e.g. [chris@troll work]$cat important.txt
 
 less filename ... displays the contents of file "filename" in the screen, contents are scrollable by using "up" and "down" keys. end this by pressing "q"
+
         e.g. [chris@troll work]$less important.txt
 
 wc filename ...
 
 history ... list of all commands executed within this terminal
+
         e.g. [chris@troll ~]$history
 
 exit ... close the shell
+
         e.g. [chris@troll ~]$exit
 
 
@@ -207,9 +222,11 @@ ssh computername        ... connect to another computer using secure shell (an e
                 [chris@troll ~]$
 
 scp computername:remote_directory/filename current_directory   ... copy file "filename" from a remote computer or network into the "current_directory" using encrypted file copy
+
             e.g. [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
 
 wc filename      ... counts lines, words and letters within file "filename"
+
                 e.g. [chris@troll work]wc shopping_list.txt
 
 
