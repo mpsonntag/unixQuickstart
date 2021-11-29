@@ -1,16 +1,15 @@
-Linux bash (bourne again shell)
-YOU SHOULD READ THIS!
+# Linux bash (bourne again shell)
 
-Using the shell
+## Using the shell
 
-baby steps:
+baby steps
 1) get someone to show you how to open a shell and execute commands
 2) get to know the file system and how to navigate through it (see explanatory tutorial above)
 3) get to know the basic shell commands described below
 4) script away
 
 
-More resources:
+More resources
 
 Understanding the unix file system:
 http://www.december.com/unix/tutor/filesystem.html
@@ -22,12 +21,11 @@ Shell Tutorial
 http://linuxcommand.org/learning_the_shell.php
 
 
-
-
-Navigating through the filesystem:
+## Navigating through the filesystem:
 
 when you first open your shell you will see something like this:
-[chris@troll ~]$
+
+        [chris@troll ~]$
 
 this means, that you have logged into a linux network with username "chris", that you currently use the computer named "troll" and are currently within the space, the filesystem has reserved as your workspace (indicated by "~").
 
@@ -37,33 +35,31 @@ in a more abstract way will always see the information like this:
 
 You can navigate through the filesystem by using the "cd" (change directory) command right after the "$" sign. Work yourself through the navigation introduction provided with the links above.
 
-
 Nice to know:
 
 - Special characters which are not allowed in file- or foldernames:
-/, .., ~, *, ?, >, <, |, \
+`/, .., ~, *, ?, >, <, |, \`
 
 - Linux is case sensitive!      "Filename.txt" is not the same as "filename.txt"
 
 - Try to avoid blanks within file- or foldernames, always use underscore or minus, escpecially, if you create folders or files using the filebrowser!
+
         e.g. 
-                do not use:
-                project computational systems biology
-                
-                use:
-                project_computational_systems_biology
+        do not use:
+        project computational systems biology
+        
+        use:
+        project_computational_systems_biology
 
 - Use the auto-complete function provided by the tabulator key:
-        example:
-        
-        [username@computername ~]$cd /h
-        
-        hit "tab" once, it should auto-complete your entry to
 
+        example:
+        [username@computername ~]$cd /h
+
+        hit "tab" once, it should auto-complete your entry to
         [username@computername ~]$cd /home/
         
         if you hit "tab" twice, it will display the contents of the directory, without disrupting your command entry
-        
         [username@listeria ~]$ cd /home/
         admin/ apps/  conf/  edu/   proj/  user/
         [username@listeria ~]$ cd /home/
@@ -98,8 +94,7 @@ Nice to know:
 - No paper basket! If you remove files or directories using the shell, there is no easy recovery!
 
 
-
-Basic Bash commands:
+## Basic Bash commands
 
 ls ... display files and directories within your current directory
 ls -l ... like ls, but display additional informations
@@ -167,11 +162,7 @@ exit ... close the shell
         e.g. [chris@troll ~]$exit
 
 
-
-
-
-
-Further Basic Bash command line options:
+## Further Basic Bash command line options:
 
 [command] > [filename] ... will write the output of a specifc [command] to a specific file. note, that an already existing file with the same filename at the same location will be replaced!
         e.g.    [chris@troll work]$echo hurray for icecream! > important.txt
@@ -203,8 +194,7 @@ fg              ... if you have a program running in the background, get it back
 command_1 | command_2 ... | ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
 
 
-
-Further useful Bash Commands:
+## Further useful Bash Commands:
 
 ssh computername        ... connect to another computer using secure shell (an encrypted connection to another computer within the network). once connected, the cpu of this computer will be used for all further actions. makes sense to do large calculations on the server rather than on the local machine. Might require a password.
                 [chris@troll work]$ssh server4
@@ -232,7 +222,7 @@ gzip    ... compress/uncompress files
 tar     ... compress/uncompress files
 
 
-Commandline programms for textfile handling:
+## Commandline programms for textfile handling
 Use the --help option for in depth information, links provided or the interweb.
 
 sort    ... Sorts standard input then outputs the sorted result on standard output.
