@@ -130,80 +130,84 @@ You can navigate through the filesystem by using the `cd` (change directory) com
 
 - `cp [path1/source] [path2/target]` ... copy file "source" residing at location "path1" to file "target" residing at location "path2"
 
-        e.g. [chris@troll work]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf /home/users/chris/work/papers/science/2011_Science_2282772.pdf
+      [chris@troll work]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf /home/users/chris/work/papers/science/2011_Science_2282772.pdf
 
 - `cp path1/source ./target` ... copy file "source" residing at location "path1" to file "target" at the current location
 
-        e.g. [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf ./2011_Science_2282772.pdf
-                will copy the file 2011_Science_2282772.pdf from location /home/user/chris/work/papers/ to location /home/users/chris/work/papers/science/
+      [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf ./2011_Science_2282772.pdf
+      # will copy the file 2011_Science_2282772.pdf
+      # from location /home/user/chris/work/papers/
+      # to location /home/users/chris/work/papers/science/
 
 - `cp path1/source` . ... copy file "source" residing at location "path1" to the current location, keeping the same filename.
 
-        e.g. [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf .
-                will copy the file 2011_Science_2282772.pdf from location /home/user/chris/work/papers/ to location /home/users/chris/work/papers/science/
+      [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf .
+      # will copy the file 2011_Science_2282772.pdf
+      #  from location /home/user/chris/work/papers/
+      #  to location /home/users/chris/work/papers/science/
 
 - `mv [path origin]/[filename] [path target]` ... same as "cp" command, but moves the file from one location to the other, deleting the original file.
 
 - `echo text` ... prints "text" onto the screen
 
-        e.g. [chris@troll work]$echo hurray for icecream!
+      [chris@troll work]$echo hurray for icecream!
         
 - `echo text > filename.txt` ... saves "text" into file "filename.txt" which will be created at the current filesystem location
 
-        e.g. [chris@troll work]$echo hurray for icecream! > important.txt
+      [chris@troll work]$echo hurray for icecream! > important.txt
 
 - `cat [filename]` ... prints the contents of file "filename" onto the screen.
 
-        e.g. [chris@troll work]$cat important.txt
+      [chris@troll work]$cat important.txt
 
 - `less [filename]` ... displays the contents of file "filename" in the screen, contents are scrollable by using "up" and "down" keys. end this by pressing "q"
 
-        e.g. [chris@troll work]$less important.txt
+      [chris@troll work]$less important.txt
 
 - `history` ... list of all commands executed within this terminal
 
-        e.g. [chris@troll ~]$history
+      [chris@troll ~]$history
 
 - `exit` ... close the shell
 
-        e.g. [chris@troll ~]$exit
+      [chris@troll ~]$exit
 
 
 ## Further Basic Bash command line options:
 
 - `[command] > [filename]` ... will write the output of a specific [command] to a specific file. note, that an already existing file with the same filename at the same location will be replaced!
 
-        e.g.    [chris@troll work]$echo hurray for icecream! > important.txt
-                [chris@troll work]$less important.txt
-                [chris@troll work]$echo another hurray for schnitzel! > important.txt
-                [chris@troll work]$less important.txt
+      [chris@troll work]$echo hurray for icecream! > important.txt
+      [chris@troll work]$less important.txt
+      [chris@troll work]$echo another hurray for schnitzel! > important.txt
+      [chris@troll work]$less important.txt
 
 - `[command] >> [filename]` ... will append the output of a specific [command] to a specific file. If the file does not exist yet, it will be created.
 
-        e.g.    [chris@troll work]$echo chicken >> shopping_list.txt
-                [chris@troll work]$less shopping_list.txt
-                [chris@troll work]$echo onions >> shopping_list.txt
-                [chris@troll work]$echo lemons >> shopping_list.txt
-                [chris@troll work]$echo olive oil >> shopping_list.txt
-                [chris@troll work]$echo rosemary >> shopping_list.txt
-                [chris@troll work]$less shopping_list.txt
+      [chris@troll work]$echo chicken >> shopping_list.txt
+      [chris@troll work]$less shopping_list.txt
+      [chris@troll work]$echo onions >> shopping_list.txt
+      [chris@troll work]$echo lemons >> shopping_list.txt
+      [chris@troll work]$echo olive oil >> shopping_list.txt
+      [chris@troll work]$echo rosemary >> shopping_list.txt
+      [chris@troll work]$less shopping_list.txt
 
 - `[command] &` ... start a program running in the background, getting back the shell.
 
-        e.g.    [chris@troll work]$firefox &
+      [chris@troll work]$firefox &
 
 - `[command]`       ... start a program
 
-        e.g.    [chris@troll work]$firefox
+      [chris@troll work]$firefox
 
 - `ctr + z`         ... stop the execution of the program
 - `bg`              ... restart the program, but keep it running in the background (bg)
 
-                [chris@troll work]$bg
+      [chris@troll work]$bg
 
 - `fg`              ... if you have a program running in the background, get it back by fg (foreground)
 
-        e.g.    [chris@troll work]$fg
+      [chris@troll work]$fg
 
 - `command_1 | command_2` ... `|` ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
 
@@ -212,22 +216,22 @@ You can navigate through the filesystem by using the `cd` (change directory) com
 
 - `ssh [computername]`        ... connect to another computer using secure shell (an encrypted connection to another computer within the network). once connected, the cpu of this computer will be used for all further actions. makes sense to do large calculations on the server rather than on the local machine. Might require a password.
 
-        [chris@troll work]$ssh server4
-        [chris@server4 ~]$
+      [chris@troll work]$ssh server4
+      [chris@server4 ~]$
 
-        notice that the computername in the bash shell has changed from "troll" to "server4"
+      notice that the computername in the bash shell has changed from "troll" to "server4"
 
-        use the command "exit" to close the ssh connection to another computer.
-        [chris@server4 ~]$exit
-        [chris@troll ~]$
+      use the command "exit" to close the ssh connection to another computer.
+      [chris@server4 ~]$exit
+      [chris@troll ~]$
 
 - `scp [computername]:[remote_directory]/[filename] [current_directory]`   ... copy file "filename" from a remote computer or network into the "current_directory" using encrypted file copy
 
-        e.g. [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
+      [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
 
 - `wc [filename]`      ... counts lines, words and letters within file "filename"
 
-        e.g. [chris@troll work]wc shopping_list.txt
+      [chris@troll work]wc shopping_list.txt
 
 
 More nice bash commands, use the --help option for in depth information:
